@@ -1,0 +1,102 @@
+@media screen and (max-width:992px) {
+    .artist{
+        border: 2px solid grey;
+        padding: 6rem 10rem;
+        min-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (max-width:802px) {
+    html{
+        font-size: 9px;
+    }
+
+    .tkt{
+        width: 600px;
+    }
+
+    .content h1{
+        font-size: 5rem;
+
+    }
+
+    .content span{
+        font-size: 2.2rem;
+    }
+    .artist{
+        border: 2px solid grey;
+        padding: 2rem 10rem;
+        min-width: 600px;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+
+    .wrapper{
+        gap: 2rem;
+    }
+    .con .conbox{
+        width: 45%;
+    }
+}
+
+
+@media screen and (max-width:602px) {
+
+    nav{
+        display: none;
+    }
+
+
+    .hamnav{
+        display: block;
+        font-size: 4rem;
+        padding: 1rem;
+    }
+
+    .intro{
+        height: 50vh;
+    }
+    .artist{
+        border: 2px solid grey;
+        padding: 2rem 2rem;
+        min-width: 300px;
+        margin: 0 auto;
+    }
+
+    .tour ul{
+        width: 90%;
+    }
+
+    .tkt{
+        width: 100%;
+    }
+    .con{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .con .conbox{
+        width: 90%;
+        min-height: 35vh;
+    }
+
+    footer{
+        height: 18vh;
+    }
+
+    footer .icon i{
+        font-size: 3rem;
+    }
+
+    footer p{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:402px){
+    footer p{
+        font-size: 1.5rem;
+    }
+} 

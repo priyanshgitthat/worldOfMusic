@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", system-ui;
+    text-decoration: none;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    /* background-color: orange; */
+    background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url("https://cdn.pixabay.com/photo/2021/10/14/09/53/violin-6708567_960_720.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0; /* Start at the bottom of the viewport */
+    transition: transform 0.5s ease; /* Smooth transition */
+    z-index: 1000;
+}
+
+main.hidden {
+    transform: translateY(-100vh); /* Slide up out of view */
+    pointer-events: none; /* Prevent interactions */
+}
+
+main button {
+    padding: 20px;
+    background: linear-gradient(to right, #141e30, #243b55);
+    border-radius: 20px;
+    outline: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: white;
+    border: none;
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    0%{
+        box-shadow: 0 0 20px white;
+    }
+    50%{
+        box-shadow: 0 0 50px white;
+    }
+    100%{
+        box-shadow: 0 0 20px white;
+    }
+}
+
+main button:hover {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px black;
+}
+
+section {
+    padding: 20px;
+    background-color: lightgrey; /* Background for visibility */
+    position: relative; /* Ensure section is visible */
+    z-index: 1; /* Ensure it appears above the background */
+}
+
+/* ------------------------------- header ---------------------------- */
+
+header{
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(to right, #141e30, #243b55);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+}
+
+nav{
+    /* border: 2px solid white; */
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+nav a{
+    display: inline-block;
+    height: 100%;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5rem;
+    align-content: center;
+    padding: 0 1.3rem;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+}
+
+nav a:hover{
+    background-color: white;
+    color: #141e30;
+}
+
+
+/* --------------------------- intro styling --------------------*/
+
+.intro {
+    margin: 10vh 0 0 0 ;
+    width: 100%;
+    height: 90vh;
+    /* background: linear-gradient(to right, #000000, #434343);
+     */
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("https://cdn.pixabay.com/photo/2016/09/10/11/11/musician-1658887_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.content h1{
+    font-size: 8rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-weight: bolder;
+}
+
+.content span{
+    font-size: 3rem;
+    letter-spacing: .1rem;
+    text-transform: capitalize;
+    font-family: "Dancing Script", cursive;
+
+}
+
+/* ------------------------- artist --------------------------- */
+.artist{
+    min-height: 80vh;
+    padding: 6rem 20rem;
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.artist h1{
+    color: #141e30;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: .8rem;
+}
+
+.artist span{
+    text-transform: capitalize;
+    font-family: "Dancing Script", cursive;
+    font-size: 2.2rem;
+    color: #243b556c;
+    font-weight: bolder;
+}
+
+.artist p{
+    font-size: 2.1rem;
+    letter-spacing: 2.rem;
+    word-spacing: .1rem;
+    color: #141e30;
+}
+
+/* --------------------- wrapper styling ----------------------- */
+
+.wrapper{
+    width: 100%;
+    min-height: 40vh;
+    /* border: 2px solid black; */
+    display: flex;
+    overflow-x: scroll;
+    gap: 2rem;
+    scroll-snap-type: x mandatory;
+    /* scrollbar-width: none;
+    -ms-overflow-style: none; */
+}
+.wrapper .box{
+    width: 300px;
+    /* border: 2px solid red; */
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+.box .pack{
+    width: 100%;
+    height: 50%;
+    /* border: 2px solid blue; */
+}
+
+.pack img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.txtbox{
+    background: linear-gradient(to right, #141e30, #243b55);
+}
+
+.txtbox h2{
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+    padding: 1rem;
+    text-transform: capitalize;
+    letter-spacing: .2rem;
+}
+
+.txtbox p{
+    overflow-wrap: break-word;
+    font-size: 1.6rem;
+    padding: 1rem;
+    text-transform: capitalize;
+    word-spacing: 0rem;
+    font-weight: 200;
+    letter-spacing: 0rem;
+    color: white;
+}
+
+/* ------------------------------------ tour ----------------------------*/
+
+.tour{
+    width: 100%;
+    min-height: 90vh;
+    background: linear-gradient(to right, #141e30, #243b55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem 1rem;
+    /* border: 1px solid white; */
+}
+
+.tour h1{
+    font-size: 3.4rem;
+    text-transform: uppercase;
+    letter-spacing: .6rem;
+}
+
+.tour span{
+    font-size: 2rem;
+    font-family: "Dancing Script", cursive;
+    text-transform: capitalize;
+    letter-spacing: .2rem;
+}
+
+.tour ul{
+    /* border: 2px solid white; */
+    width: 60%;
+    height: 20vh;
+    overflow-y: scroll;
+    margin: 2rem  3rem  ;
+}
+
+.tour ul li{
+    height: 55%;
+    border-bottom: 1px solid #141e30;
+    color:#243b55;
+    background-color: rgba(255, 255, 255, 0.425);
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    letter-spacing: 0px;
+    padding: 1rem;
+    font-weight: 800;
+    list-style: none;
+
+}
+
+.tkt{
+    width: 800px;
+    height: 60vh;
+    /* border: 2px solid white; */
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.txtbox{
+    flex-shrink: 0;
+    width: 300px;
+    height: 100%;
+    /* border: 2px solid black; */
+    scroll-snap-align: center;
+}
+
+.dabba{
+    width: 100%;
+    height: 50%;
+    /* border: 2px solid black; */
+}
+
+.dabba img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tktText{
+    padding: 1rem;
+    position: relative;
+    background-color: white;
+}
+.dabba span{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color: #141e30;
+    font-weight: bolder;
+}
+.dabba p{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 400;
+}
+.dabba a{
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    border: 1px solid transparent;
+    padding: 5px 8px;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: capitalize;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    transition: .2s all ease-in-out;
+}
+
+.dabba a:hover{
+    box-shadow: 0 0 10px #141e30;
+    text-shadow: 0 0 2px white;
+    transform: scale(1.1);
+}
+
+/* -------------------------------- contact ------------------------------- */
+
+.contact{
+    width: 100%;
+   min-height: 60vh;
+    background-color: white;
+}
+
+.contact h1{
+    color: #141e30;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 3.8rem;
+    margin: 2rem 0 0 0;
+}
+
+.note,.con{
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.note {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact span{
+    color: #141e30;
+    text-align: center;
+    font-size: 2.6rem;
+    display: inline-block;
+    letter-spacing: .1rem;
+    font-weight: bolder;
+    font-family: "Dancing Script", cursive;
+}
+
+.con{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.con .conbox{
+    /* border: 2px solid black; */
+    width: 40%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .row{
+    /* border: 2px solid red; */
+    width: 70%;
+    margin: .5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.row span i, .row p{
+    color: black;
+    font-size: 1.8rem;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+}
+
+.right form{
+    /* border: 2px solid blue; */
+    width: 90%;
+    height: 70%;
+}
+
+form .inp{
+    /* border: 2px solid orange; */
+    margin: 1rem 0;
+    height: 6vh;
+}
+
+.inp1{
+    display: flex;
+    gap: 1rem;
+}
+.inp1 input{
+    width: 50%;
+    height: 100%;
+    outline: none;
+    border: 1px solid #243b55;
+    color:#141e30;
+    padding: 0 .5rem;
+    font-size:1.8rem;
+}
+
+.inp2 textarea{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid #243b55;
+    color:#141e30;
+    padding: 0 .5rem;
+    font-size:1.8rem;
+    resize: none;
+}
+
+.inp input::placeholder,.inp textarea::placeholder{
+    text-transform: capitalize;
+    color: #141e309f;
+}
+
+.btn{
+    display: flex;
+    justify-content: end;
+    transition: all .4s ease-in-out;
+}
+
+.btn input{
+    width: 80px;
+    font-size: 2rem;
+    text-transform: capitalize;
+    background: linear-gradient(to right, #141e30, #243b55);
+    outline: none;
+    border: none;
+}
+
+.btn input:hover{
+    box-shadow: 5px 4px 10px #141e30;
+    transform: scale(.9);
+}
+
+/* ---------------------- photo ----------------------------- */
+
+.photo{
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("https://img.freepik.com/free-photo/fantasy-dj-illustration_23-2151642177.jpg?t=st=1727509164~exp=1727512764~hmac=8b2dd0464f92d0e06fee40135fe812e15c277726c575f0df9095447140c453de&w=826");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+footer{
+    background: linear-gradient(to right, #141e30, #243b55);
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+}
+
+footer .icon i{
+margin: 0 1rem;
+font-size: 4rem;
+transition: all .3s ease-in-out;
+}
+footer .icon i:hover{
+    transform: scale(.9);
+    text-shadow: 0 0 10px white;
+}
+
+footer p{
+    font-size: 2.1rem;
+    text-transform: capitalize;
+    margin: 2rem;
+}
+
+.hamnav {
+    display: none;
+}
+
+.hamnav input{
+    display: none;
+}
+.hamnav input:checked  .hammenu{
+  top: 20vh;
+}
+
+.hammenu{
+    width: 60%;
+    height: 50vh;
+    background-color: #243b55;
+    position: fixed;
+    top: 10vh;
+    left: -100%;
+    transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.hammenu a{
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    height: 30%;
+}
